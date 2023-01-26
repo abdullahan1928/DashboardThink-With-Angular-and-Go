@@ -1,0 +1,20 @@
+<div>
+	<mat-card class="title_center">
+		<div style="text-align:center;">
+			<mat-card-title>Student Details</mat-card-title>
+		</div>
+		<img matCardImage>
+		<div *ngFor="let data of studentData | keyvalue: unsorted">
+			<mat-card-content *ngIf="data.key!=='admissionDate'">
+				<span class="key">{{data.key}}</span>
+				:
+				<span class="value">{{data.value}}</span>
+			</mat-card-content>
+			<mat-card-content *ngIf="data.key==='admissionDate'">
+				<span class="key">{{data.key}}</span>
+				:
+				<span class="value">{{data.value}}</span>
+			</mat-card-content>
+		</div>
+	</mat-card>
+</div>

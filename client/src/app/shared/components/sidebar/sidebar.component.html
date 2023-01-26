@@ -1,0 +1,59 @@
+<mat-nav-list>
+	<h2 matSubheader>Pages</h2>
+
+	<a
+		mat-list-item
+		routerLinkActive="active-link"
+		routerLink="/dashboard"
+	>
+		<mat-icon>dashboard</mat-icon>
+		Dashboard
+	</a>
+	<a
+		mat-list-item
+		routerLinkActive="active-link"
+		routerLink="/students"
+	>
+		<mat-icon>school</mat-icon>
+		Students
+	</a>
+	<a
+		mat-list-item
+		routerLinkActive="active-link"
+		routerLink="/tasks"
+	>
+		<mat-icon>task</mat-icon>
+		Tasks
+	</a>
+
+	<mat-divider></mat-divider>
+
+	<h2 matSubheader>Tools</h2>
+
+	<a
+		mat-list-item
+		routerLinkActive="active-link"
+		routerLink="/audits"
+	>
+		<mat-icon>history</mat-icon>
+		Audit Logs
+	</a>
+
+	<a
+		mat-list-item
+		routerLinkActive="active-link"
+		routerLink="/settings"
+	>
+		<mat-icon>settings</mat-icon>
+		Settings
+	</a>
+
+	<a
+		(click)="logout()"
+		mat-list-item
+		routerLinkActive="active-link"
+	>
+		<mat-icon>logout</mat-icon>
+		Log Out
+	</a>
+</mat-nav-list>

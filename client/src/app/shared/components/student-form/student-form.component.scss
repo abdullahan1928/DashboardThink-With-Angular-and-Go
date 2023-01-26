@@ -1,0 +1,34 @@
+.center-content {
+    margin-top: 30px;
+    text-align: -webkit-center;
+
+    .example-card {
+        width: 50rem;
+    }
+
+    mat-card-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    mat-card-content {
+        display: inline;
+        margin: 2rem;
+
+        mat-form-field {
+            margin-top: 30px;
+            width: 20rem;
+        }
+    }
+
+    .mat-button {
+        margin: 20px 0;
+        color: white;
+        height: 40px;
+        background-color: #3F51B5;
+
+        &:hover {
+            background-color: #303F9F;
+        }
+    }
+}

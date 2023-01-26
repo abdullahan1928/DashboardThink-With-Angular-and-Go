@@ -1,0 +1,108 @@
+<div class="center-content">
+	<form [formGroup]="taskForm"
+		novalidate
+		fxLayout="column wrap"
+		fxLayoutAlign="center center"
+		fxLayoutGap="10px"
+	>
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>Assign Tasks</mat-card-title>
+				<mat-card-subtitle>Enter Task Details</mat-card-subtitle>
+			</mat-card-header>
+
+			<!-- <mat-card-content> -->
+
+			<!-- Task Name -->
+			<mat-card-content>
+				<mat-form-field>
+					<mat-label>Task Name</mat-label>
+					<input matInput
+						formControlName="name"
+					>
+					<mat-error *ngIf="taskForm.controls['name'].hasError('required')">
+						Task Name is required
+					</mat-error>
+				</mat-form-field>
+			</mat-card-content>
+
+			<!-- Task Due Date -->
+			<mat-card-content>
+				<mat-form-field>
+					<mat-label>Task Due Date</mat-label>
+					<input [matDatepicker]="picker"
+						matInput
+						formControlName="dueDate"
+					>
+					<mat-datepicker-toggle [for]="picker"
+						matSuffix
+					></mat-datepicker-toggle>
+					<mat-datepicker #picker></mat-datepicker>
+					<mat-error *ngIf="taskForm.controls['dueDate'].hasError('required')">
+						Task Due Date is required
+					</mat-error>
+				</mat-form-field>
+			</mat-card-content>
+
+			<!-- Task Priority -->
+			<mat-card-content>
+				<mat-form-field>
+					<mat-label>Task Priority</mat-label>
+					<mat-select formControlName="priority">
+						<mat-option *ngFor="let priority of priorities"
+							[value]="priority"
+						>
+							{{priority}}
+						</mat-option>
+					</mat-select>
+					<mat-error *ngIf="taskForm.controls['priority'].hasError('required')">
+						Task Priority is required
+					</mat-error>
+				</mat-form-field>
+			</mat-card-content>
+
+			<!-- Task Status -->
+			<mat-card-content>
+				<mat-form-field>
+					<mat-label>Task Status</mat-label>
+					<mat-select formControlName="status">
+						<mat-option *ngFor="let status of statuses"
+							[value]="status"
+						>
+							{{status}}
+						</mat-option>
+					</mat-select>
+					<mat-error *ngIf="taskForm.controls['status'].hasError('required')">
+						Task Status is required
+					</mat-error>
+				</mat-form-field>
+			</mat-card-content>
+
+			<!-- Task Description -->
+			<mat-card-content>
+				<mat-form-field>
+					<mat-label>Task Description</mat-label>
+					<textarea matInput
+						formControlName="description"
+					></textarea>
+					<mat-error *ngIf="taskForm.controls['description'].hasError('required')">
+						Task Description is required
+					</mat-error>
+				</mat-form-field>
+			</mat-card-content>
+
+			<br>
+
+			<button (click)="addTask()"
+				mat-raised-button
+				color="primary"
+				class="mat-button"
+			>
+				Add task
+			</button>
+
+			<br>
+
+		</mat-card>
+	</form>
+</div>

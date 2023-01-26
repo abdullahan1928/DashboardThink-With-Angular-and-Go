@@ -1,0 +1,49 @@
+<div class="login-form-container">
+	<h2 class="login-title">
+		{{loginService.status}} Login
+	</h2>
+	<form [formGroup]="loginService.loginForm"
+		(ngSubmit)="loginService.adminLogin()"
+		class="login-form"
+	>
+		<div class="login-form-group">
+			<input type="text"
+				id="username"
+				class="login-form-input"
+				formControlName="username"
+			>
+			<!-- value -->
+			<span class="login-form-label"
+				for="username"
+			>
+				Username
+			</span>
+			<!-- error -->
+			<app-errors [control]="loginService.username"></app-errors>
+		</div>
+		<div class="login-form-group">
+			<input type="password"
+				id="password"
+				class="login-form-input"
+				formControlName="password"
+			>
+			<!-- value -->
+			<span class="login-form-label"
+				for="password"
+			>
+				Password
+			</span>
+			<app-errors [control]="loginService.password"></app-errors>
+		</div>
+		<div class="login-form-group">
+			<button [disabled]="!loginService.loginForm.valid"
+				type="submit"
+			>
+				Login
+			</button>
+			<div *ngIf="!loginService.isAdminLoggedIn" class="credentials-wrong">
+				Credentials are wrong
+			</div>
+		</div>
+	</form>
+</div>

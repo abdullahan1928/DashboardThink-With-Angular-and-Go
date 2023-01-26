@@ -1,0 +1,18 @@
+:host {
+
+    mat-tab-group {
+        margin-bottom: 20px;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        mat-card {
+            width: 80%;
+            align-self: center;
+            align-items: center;
+        }
+    }
+}
